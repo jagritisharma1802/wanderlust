@@ -8,9 +8,9 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsyc.js");
 // const ExpressError = require("./utils/ExpressError.js");
 
+require("dotenv").config();
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wandurlust";
-
+const MONGO_URL = process.env.ATLASDB_URL;
 main(). then(() => {
     console.log("connected to DB");
 }).catch(err => {
